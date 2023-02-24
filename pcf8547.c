@@ -99,7 +99,8 @@ void i2c_init(void)
          
                 usleep(2000);
                 i2c_command(0x06);
-           
+                usleep(40);
+                i2c_command(0x0e);
                 usleep(40);
 
 
