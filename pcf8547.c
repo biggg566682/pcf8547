@@ -78,8 +78,7 @@ void string_slide( )
 
 
 }
-
-int main()
+void i2c_init(void)
 {
                 i2cstrat();
                 usleep(15000);
@@ -92,23 +91,23 @@ int main()
                 i2c_send_byte(0x20);
                 usleep(40);
                 i2c_command(0x28);
-     
                 usleep(40);
                 i2c_command(0x08);
-                
+        
                 usleep(40);
                 i2c_command(0x01);
          
                 usleep(2000);
                 i2c_command(0x06);
-               
-                usleep(40);
-                i2c_command(0x0e);
-               
+           
                 usleep(40);
 
+
+}
+int main()
+{
+                i2c_init();
                 i2c_write_string("HONG XIANG HAO");
-                //i2c_command(0x10);
                 usleep(40);
                 i2c_lcd_address(5 ,1);
                 usleep(40);
